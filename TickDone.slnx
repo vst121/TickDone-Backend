@@ -4,4 +4,6 @@
     <File Path="Directory.Packages.props" />
   </Folder>
   <Project Path="TickDone.API/TickDone.API.csproj" />
+  <Project Path="TickDone.Core/TickDone.Core.csproj" Id="095cac95-bce0-49df-8c3d-9a65ec1abf55" />
+  <Project Path="TickDone.Infrastructure/TickDone.Infrastructure.csproj" Id="b73ad0f8-152e-4761-88c4-82e425b8cd54" />
 </Solution>
