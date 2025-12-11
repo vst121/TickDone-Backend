@@ -2,6 +2,8 @@
 
 global using TickDone.Infrastructure;
 global using TickDone.Core.Entities;
-global using TickDone.API.Dtos;
+global using TickDone.API.Requests;
+global using TickDone.API.Endpoints;
+
 
 
