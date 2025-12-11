@@ -20,4 +20,8 @@
 		<ProjectReference Include="..\TickDone.Core\TickDone.Core.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Migrations\Sqlite\" />
+	</ItemGroup>
+
 </Project>

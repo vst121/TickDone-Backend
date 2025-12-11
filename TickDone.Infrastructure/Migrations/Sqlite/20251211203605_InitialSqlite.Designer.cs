@@ -11,7 +11,7 @@ using TickDone.Infrastructure;
 namespace TickDone.Infrastructure.Migrations.Sqlite
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251211143147_InitialSqlite")]
+    [Migration("20251211203605_InitialSqlite")]
     partial class InitialSqlite
     {
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace TickDone.Infrastructure.Migrations.Sqlite
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("Deadline")
+                    b.Property<DateTime?>("Deadline")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Done")

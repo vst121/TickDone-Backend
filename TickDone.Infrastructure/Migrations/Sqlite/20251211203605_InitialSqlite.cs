@@ -18,7 +18,7 @@ namespace TickDone.Infrastructure.Migrations.Sqlite
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     TaskName = table.Column<string>(type: "TEXT", nullable: false),
-                    Deadline = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Deadline = table.Column<DateTime>(type: "TEXT", nullable: true),
                     Done = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>

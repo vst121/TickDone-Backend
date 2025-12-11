@@ -23,7 +23,7 @@ namespace TickDone.Infrastructure.Migrations.Sqlite
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("Deadline")
+                    b.Property<DateTime?>("Deadline")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("Done")

@@ -1,3 +1,3 @@
 ﻿namespace TickDone.API.Dtos;
 
-public record CreateToDoRequest(string TaskName, DateTime Deadline);
+public record CreateToDoRequest(string TaskName, DateTime? Deadline);

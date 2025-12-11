@@ -35,11 +35,18 @@ app.MapGet("/todos/{id}", async (int id, AppDbContext db) =>
 
 app.MapPost("/todos", async (CreateToDoRequest request, AppDbContext db) =>
 {
+    if (request.TaskName.Trim().Length < 10)
+        return Results.BadRequest(new
+        {
+            error = "TaskNameTooShort",
+            message = "Task must be at least 10 characters long.",
+            field = "TaskName"
+        });
+
     var todo = new ToDo
     {
         TaskName = request.TaskName,
         Deadline = request.Deadline,
-        Done = false
     };
 
     db.ToDos.Add(todo);
