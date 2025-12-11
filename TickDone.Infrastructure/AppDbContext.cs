@@ -2,7 +2,7 @@
 
 public class AppDbContext : DbContext
 {
-    public DbSet<ToDo> Users => Set<ToDo>();
+    public DbSet<ToDo> ToDos => Set<ToDo>();
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
