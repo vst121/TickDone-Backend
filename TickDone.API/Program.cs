@@ -20,13 +20,23 @@ app.MapGet("/todos", async (AppDbContext db) =>
     var todos = await db.ToDos.ToListAsync();
     return Results.Ok(todos);
 })
-.WithName("GetTodos");
+.WithName("GetToDos");
+
+app.MapGet("/todos/{id}", async (int id, AppDbContext db) =>
+{
+    var todo = await db.ToDos.FindAsync(id);
+
+    if (todo is null)
+        return Results.NotFound();
+
+    return Results.Ok(todo);
+})
+.WithName("GetToDoById");
 
 app.MapPost("/todos", async (CreateToDoRequest request, AppDbContext db) =>
 {
     var todo = new ToDo
     {
-        Id = 1,
         TaskName = request.TaskName,
         Deadline = request.Deadline,
         Done = false
@@ -37,6 +47,36 @@ app.MapPost("/todos", async (CreateToDoRequest request, AppDbContext db) =>
 
     return Results.Created($"/todos/{todo.Id}", todo);
 })
-.WithName("CreateTodo");
+.WithName("CreateToDo");
+
+app.MapPut("/todos/{id}", async (int id, ToDo updatedTodo, AppDbContext db) =>
+{
+    var todo = await db.ToDos.FindAsync(id);
+
+    if (todo is null)
+        return Results.NotFound();
+
+    todo.Done = updatedTodo.Done;
+
+    await db.SaveChangesAsync();
+
+    return Results.Ok(todo);
+})
+.WithName("UpdateTodo");
+
+app.MapDelete("/todos/{id}", async (int id, AppDbContext db) =>
+{
+    var todo = await db.ToDos.FindAsync(id);
+
+    if (todo is null)
+        return Results.NotFound();
+
+    db.ToDos.Remove(todo);
+    await db.SaveChangesAsync();
+
+    return Results.NoContent();
+})
+.WithName("DeleteToDo");
+
 
 app.Run();
