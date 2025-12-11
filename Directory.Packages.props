@@ -1,5 +1,10 @@
 <Project>
 	<ItemGroup>
 		<GlobalPackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
+		<GlobalPackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.1" />
+		<GlobalPackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.1" />
+		<GlobalPackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.1" />
+		<GlobalPackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.1" />
+		<GlobalPackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.1" />
 	</ItemGroup>
 </Project>
