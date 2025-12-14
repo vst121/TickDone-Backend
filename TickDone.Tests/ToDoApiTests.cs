@@ -54,8 +54,8 @@ public class ToDoApiTests : IClassFixture<CustomWebApplicationFactory>, IDisposa
 
         var problem = await response.Content.ReadFromJsonAsync<ValidationProblemDetails>();
         Assert.NotNull(problem);
-        Assert.Equal("TaskNameTooShort", problem.Extensions["error"]?.ToString());
-        Assert.Contains("Task must be at least 10 characters long.", problem.Extensions["message"]!.ToString());
+        Assert.Equal("TodoTooShort", problem.Extensions["error"]?.ToString());
+        Assert.Contains("Todo must be at least 10 characters long.", problem.Extensions["message"]!.ToString());
     }
 
     [Fact]

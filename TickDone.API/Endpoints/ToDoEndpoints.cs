@@ -31,8 +31,8 @@ public static class ToDoEndpoints
             if (request.TaskName.Trim().Length < 10)
                 return Results.BadRequest(new
                 {
-                    error = "TaskNameTooShort",
-                    message = "Task must be at least 10 characters long.",
+                    error = "TodoTooShort",
+                    message = "Todo must be at least 10 characters long.",
                     field = "TaskName"
                 });
 
